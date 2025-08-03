@@ -35,6 +35,16 @@ nav {
     align-items: center;
 }
 
+.icon {
+    width: 40px;
+}
+
+.nav-links span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .nav-links p,
 .nav-links span {
     cursor: pointer;
