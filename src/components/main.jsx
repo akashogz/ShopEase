@@ -1,11 +1,18 @@
 import products from '../products.js';
 import addToCart from '../assets/addtocart.svg';
+import { useState } from 'react';
 
 function main({ cart, setCart, handleAddToCart, amount, setAmount, selectedCategory, setSelectedCategory }) {
+    const [toFind, setToFind] = useState("");
+
+    function handleToFind(event) {
+        setToFind(event.target.value);
+    }
+    
     return (
         <>
             <div className="main-container">
-                <input type="text" placeholder="Search" className="main-search" />
+                <input type="text" placeholder="Search" className="main-search" onChange={() => handleToFind(event)}/>
                 <div className="categories">
                     <button onClick={() => setSelectedCategory("All")}>All</button>
                     <button onClick={() => setSelectedCategory("Men")}>Men</button>
@@ -14,6 +21,9 @@ function main({ cart, setCart, handleAddToCart, amount, setAmount, selectedCateg
                 </div>
                 <div className="products">
                     {products
+                        .filter(product => 
+                            product.productName.toLowerCase().includes(toFind.toLowerCase())
+                        )
                         .filter(product =>
                             selectedCategory === "All" || product.productCategory === selectedCategory
                         )

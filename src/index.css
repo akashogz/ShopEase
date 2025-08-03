@@ -78,6 +78,10 @@ input[type="text"] {
     cursor: text;
 }
 
+input[type="text"] {
+    color: black;
+}
+
 .title {
     font-weight: 900;
     font-size: 20px;
@@ -112,6 +116,10 @@ input[type="text"] {
     font-size: 14px;
 }
 
+.main-search:focus {
+    color: black;
+}
+
 .categories {
     display: flex;
     margin-top: 25px;
@@ -142,10 +150,10 @@ input[type="text"] {
 }
 
 .products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, max-content));
-  gap: 33px;
-  margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, max-content));
+    gap: 33px;
+    margin-top: 25px;
 }
 
 .product {
@@ -279,4 +287,52 @@ input[type="text"] {
 
 .checkOut:hover {
     background-color: rgba(0, 0, 0, 0.808);
+}
+
+.dimmed {
+    filter: brightness(50%) blur(2px);
+    pointer-events: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.modal h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.modal p {
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.modal button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
 }
