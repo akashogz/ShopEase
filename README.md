@@ -1,12 +1,47 @@
-# React + Vite
+# 🛒 ShopEase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and responsive shopping cart web app built with **React.js**. ShopEase allows users to browse products, filter by category, and manage a shopping cart — all in a clean and intuitive UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- ✅ Product listing with images and descriptions  
+- ✅ Category-based filtering  
+- ✅ Add to cart functionality  
+- ✅ Quantity increment/decrement  
+- ✅ Cart persistence using LocalStorage  
+- ✅ Responsive design using CSS Grid & Flexbox  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🖼️ Screenshots
+
+![Product Grid](./screenshots/main-page.png)  
+![Cart View](./screenshots/cart-page.png)
+
+---
+
+## 📦 Tech Stack
+
+- React.js (`useState`, `useEffect`)
+- JavaScript (ES6+)
+- CSS3
+- Vite (Build Tool)
+
+---
+
+## 🔧 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/akashogz/ShopEase.git
+
+# Navigate into the directory
+cd ShopEase
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
