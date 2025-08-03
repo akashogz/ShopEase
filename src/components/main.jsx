@@ -2,7 +2,7 @@ import products from '../products.js';
 import addToCart from '../assets/addtocart.svg';
 import { useState } from 'react';
 
-function main({ cart, setCart, handleAddToCart, amount, setAmount, selectedCategory, setSelectedCategory }) {
+function main({ cart, setCart, handleAddToCart, amount, setAmount, selectedCategory, setSelectedCategory, setShowProduct, setSelectedProduct }) {
     const [toFind, setToFind] = useState("");
 
     function handleToFind(event) {
@@ -29,7 +29,11 @@ function main({ cart, setCart, handleAddToCart, amount, setAmount, selectedCateg
                         )
                         .map(product => (
                             <div className="product" key={product.productId}>
-                                <img src={product.productImage} className="productImage" />
+                                <img src={product.productImage} className="productImage" onClick={() => {
+                                    setSelectedProduct(product);
+                                    setShowProduct(true);
+                                    
+                                }}/>
                                 <div className="productDesc">
                                     <div>
                                         <p className="productName">{product.productName}</p>

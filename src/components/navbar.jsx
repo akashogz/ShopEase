@@ -3,13 +3,16 @@ import favoriteIcon from '../assets/favorite.svg';
 import profileIcon from '../assets/profile.svg';
 import appIcon from '../assets/icon.png';
 
-function navbar({ setShowCart }) {
+function navbar({ setShowCart, setShowProduct }) {
     return (
         <>
         <div className="main-nav">
             <nav>
                 <div className="nav-links">
-                    <span className="title" onClick={() => setShowCart(false)}><img src={appIcon} className='icon'/> ShopEase</span>
+                    <span className="title" onClick={() => {
+                        setShowCart(false);
+                        setShowProduct(false);
+                    }}><img src={appIcon} className='icon'/> ShopEase</span>
                     <p>New Arrivals</p>
                     <p>Featured</p>
                     <p>Men</p>

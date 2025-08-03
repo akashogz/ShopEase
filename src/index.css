@@ -336,3 +336,90 @@ input[type="text"] {
     cursor: pointer;
     font-size: 1rem;
 }
+
+.main-product {
+    padding-top: 50px;
+    padding-left: 200px;
+    padding-right: 200px;
+    display: flex;
+}
+
+.main-product img{
+    max-width: 400px;
+    max-height: 448px;
+    object-fit: contain;
+    border: 1px solid rgba(0, 0, 0, 0.094);
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.08);
+}
+
+.productPageDesc {
+    padding-left: 40px;
+}
+
+.productPageCategory {
+    color: #a0a0a0;
+    margin-bottom: 30px;
+}
+
+.productPageName {
+    font-weight: 800;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.productPageDes {
+    margin-bottom: 20px;
+}
+
+.productPagePrice {
+    font-size: 14px;
+    color: #a0a0a0;
+    margin-bottom: 30px;
+}
+
+.productPageText {
+    font-weight: 800;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.productSize {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.productSize button {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(69, 69, 69, 0.219);
+    background-color: white;
+    font-weight: 600;
+    transition: ease-in-out .2s;
+}
+
+.productSize button:hover {
+    background-color: rgb(230, 230, 230);
+    border-radius: 50%;
+}
+
+.main-product input[type="number"] {
+    width: 300px;
+    height: 45px;
+    border-radius: 8px;
+    border: 1px solid rgba(69, 69, 69, 0.219);
+    padding-left: 10px;
+    margin-bottom: 20px;
+} 
+
+.productPageButton button{
+    width: 130px;
+    height: 38px;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    background-color: black;
+    font-weight: 600;
+}
