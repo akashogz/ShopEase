@@ -7,21 +7,32 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Build output
+dist/
+dist-ssr/
+
+# Environment variables
+.env
 *.local
 
+# Dependency directories
+node_modules/
+
 # Editor directories and files
-.vscode/*
+.vscode/
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
+
+# Visual Studio files
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
+
+# Miscellaneous
 *.sw?
-node_modules
-dist
-.env
+
+# Optional: lockfiles for other package managers you don't use
+# yarn.lock
+# pnpm-lock.yaml
