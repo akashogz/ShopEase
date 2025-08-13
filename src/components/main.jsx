@@ -1,57 +1,94 @@
-import products from '../products.js';
-import addToCart from '../assets/addtocart.svg';
-import { useState } from 'react';
+import { useState } from "react";
+import products from "../products.js";
+import addToCart from "../assets/addtocart.svg";
 
-function main({ cart, setCart, handleAddToCart, amount, setAmount, selectedCategory, setSelectedCategory, setShowProduct, setSelectedProduct }) {
-    const [toFind, setToFind] = useState("");
+function Main({
+  handleAddToCart,
+  selectedCategory,
+  setSelectedCategory,
+  setSelectedProduct,
+  setView,
+}) {
+  const [searchTerm, setSearchTerm] = useState("");
 
-    function handleToFind(event) {
-        setToFind(event.target.value);
-    }
-    
-    return (
-        <>
-            <div className="main-container">
-                <input type="text" placeholder="Search" className="main-search" onChange={() => handleToFind(event)}/>
-                <div className="categories">
-                    <button onClick={() => setSelectedCategory("All")}>All</button>
-                    <button onClick={() => setSelectedCategory("Men")}>Men</button>
-                    <button onClick={() => setSelectedCategory("Women")}>Women</button>
-                    <button onClick={() => setSelectedCategory("Accessories")}>Accessories</button>
-                </div>
-                <div className="products">
-                    {products
-                        .filter(product => 
-                            product.productName.toLowerCase().includes(toFind.toLowerCase())
-                        )
-                        .filter(product =>
-                            selectedCategory === "All" || product.productCategory === selectedCategory
-                        )
-                        .map(product => (
-                            <div className="product" key={product.productId}>
-                                <img src={product.productImage} className="productImage" onClick={() => {
-                                    setSelectedProduct(product);
-                                    setShowProduct(true);
-                                    
-                                }}/>
-                                <div className="productDesc">
-                                    <div>
-                                        <p className="productName">{product.productName}</p>
-                                        <p className="productPrice">${product.productPrice / 100}</p>
-                                    </div>
-                                    <img
-                                        src={addToCart}
-                                        className="addToCart"
-                                        onClick={() => handleAddToCart(product)}
-                                    />
-                                </div>
-                            </div>
-                        ))}
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
-                </div>
-            </div>
-        </>
+  const filteredProducts = products
+    .filter((product) =>
+      product.productName.toLowerCase().includes(searchTerm.toLowerCase())
     )
+    .filter(
+      (product) =>
+        selectedCategory === "All" ||
+        product.productCategory === selectedCategory
+    );
+
+  const categories = ["All", "Men", "Women", "Accessories"];
+
+  return (
+    <main className="main-container">
+      <div><input
+        type="text"
+        placeholder="Search products..."
+        className="main-search"
+        value={searchTerm}
+        onChange={handleSearchChange}
+      /></div>
+
+      <div className="categories">
+        {categories.map((category) => (
+          <button
+            key={category}
+            className={selectedCategory === category ? "active" : ""}
+            onClick={() => setSelectedCategory(category)}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+
+      <div className="products">
+        {filteredProducts.map((product) => (
+          <div className="product" key={product.productId}>
+            <img
+              src={product.productImage}
+              alt={product.productName}
+              className="productImage"
+              onClick={() => {
+                setSelectedProduct(product);
+                setView("product");
+              }}
+            />
+            <div className="productDesc">
+              <div>
+                <p className="productName">{product.productName}</p>
+                <p className="productPrice">
+                  ${product.productPrice / 100}
+                </p>
+              </div>
+              <img
+                src={addToCart}
+                alt="Add to cart"
+                className="addToCart"
+                onClick={() =>
+                  handleAddToCart(
+                    {
+                      ...product,
+                      size: "M",
+                      date: new Date().toLocaleDateString(),
+                    },
+                    1
+                  )
+                }
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </main>
+  );
 }
 
-export default main
+export default Main;
