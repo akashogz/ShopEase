@@ -1,47 +1,69 @@
-# 🛒 ShopEase
+# ShopEase - Beginner E-Commerce React Project
 
-A simple and responsive shopping cart web app built with **React.js**. ShopEase allows users to browse products, filter by category, and manage a shopping cart — all in a clean and intuitive UI.
-
----
-
-## 🚀 Features
-
-- ✅ Product listing with images and descriptions  
-- ✅ Category-based filtering  
-- ✅ Add to cart functionality  
-- ✅ Quantity increment/decrement  
-- ✅ Cart persistence using LocalStorage  
-- ✅ Responsive design using CSS Grid & Flexbox  
+Welcome to **ShopEase**, a simple and beginner-friendly e-commerce frontend built with React.  
+This project demonstrates basic React concepts like state management, component structure, and simple UI interactions like adding to cart, viewing orders, and filtering products.
 
 ---
 
-## 🖼️ Screenshots
+## Features
 
-![Product Grid](./screenshots/main-page.png)  
-![Cart View](./screenshots/cart-page.png)
-
----
-
-## 📦 Tech Stack
-
-- React.js (`useState`, `useEffect`)
-- JavaScript (ES6+)
-- CSS3
-- Vite (Build Tool)
+- Browse products by category (Men, Women, Accessories, All)  
+- Search products by name  
+- View detailed product page with size and quantity options  
+- Add products to shopping cart  
+- Update cart quantities and checkout  
+- View placed orders with status  
+- Simple responsive layout using plain CSS (no frameworks)
 
 ---
 
-## 🔧 Installation
+## Screenshots
 
-```bash
-# Clone the repository
+### Main Page  
+![Main Page](./screenshots/main-page.png)
+
+### Product Page  
+![Product Page](./screenshots/product-page.png)
+
+### Cart Page  
+![Cart Page](./screenshots/cart-page.png)
+
+### Orders Page  
+![Orders Page](./screenshots/orders-page.png)
+
+---
+
+## Getting Started
+1. Clone the repository:  
 git clone https://github.com/akashogz/ShopEase.git
-
-# Navigate into the directory
-cd ShopEase
-
-# Install dependencies
+2. Install dependencies:
 npm install
+3. Run the app locally:
+npm start
 
-# Run the development server
-npm run dev
+---
+
+## Tech Stack
+
+- React (Functional Components & Hooks)  
+- Plain CSS for styling  
+- No backend (data is static, stored in local state)
+
+---
+
+## Notes
+
+- This is a beginner-level project created for learning and practice purposes.  
+- No backend or persistent data storage implemented.  
+- Styling is kept simple without CSS frameworks.
+
+---
+
+## License
+
+This project is open source and free to use.
+
+---
+
+Thank you for checking out ShopEase!  
+Feel free to contribute or suggest improvements.
